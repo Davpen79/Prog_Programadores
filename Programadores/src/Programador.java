@@ -35,12 +35,27 @@ public class Programador {
 
     //Funciones
 
-    public int updateSalary (int salary, int update){
-        if(salary < update){
+    public int updateSalary(int salary, int update) {
+        if (salary < update) {
             this.salary = update;
-        }else{
+        } else {
             return -1;
         }
         return this.salary;
+    }
+
+    public String updateLanguages(String primaryLanguage, String secondaryLanguage, String newLanguage) {
+        String infoMessage = null;
+        if (newLanguage.equals(secondaryLanguage)) {
+            secondaryLanguage = primaryLanguage;
+            primaryLanguage = newLanguage;
+        } else if (newLanguage.equals(primaryLanguage)) {
+            return infoMessage;
+        }else {
+            secondaryLanguage = primaryLanguage;
+            primaryLanguage = newLanguage;
+        }
+
+        return this.primaryLanguage;
     }
 }
